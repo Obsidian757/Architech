@@ -1,0 +1,78 @@
+name: Tests
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-smoke:
+    name: Lint + import smoke
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install test tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov ruff
+
+      - name: Ruff lint (advisory, non-blocking)
+        run: ruff check . || true
+
+      - name: Run repo-level tests (import smoke)
+        run: pytest tests/ -v --no-header
+        env:
+          OPENAI_API_KEY: sk-test-not-real
+          ANTHROPIC_API_KEY: sk-ant-test-not-real
+          GOOGLE_API_KEY: test-not-real
+
+  beifong:
+    name: beifong (production-shaped subproject)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: advanced_ai_agents/multi_agent_apps/ai_news_and_podcast_agents/beifong
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install test tooling only
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest pytest-cov python-dotenv feedparser
+        # Pure-logic + DB tests run without the heavy ML/agent dependencies.
+        # Tests that need numpy/faiss/openai are gated by import-skips so they
+        # silently skip when those libs aren't installed.
+
+      - name: Run beifong tests
+        env:
+          OPENAI_API_KEY: sk-test-not-real
+          PYTHONPATH: .
+        run: |
+          pytest tests/ -v --no-header \
+            --cov=db --cov=utils --cov=services \
+            --cov-report=term-missing \
+            -k "not (browseruse or kokoro or agno)"
