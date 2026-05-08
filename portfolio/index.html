@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marcus Chen — Full-stack developer specializing in distributed systems, modern web platforms, and open-source tooling.">
+    <title>Marcus Chen — Full-Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav class="nav" id="nav">
+        <div class="container nav__inner">
+            <a href="#top" class="nav__brand">
+                <span class="nav__brand-prompt">$</span>
+                <span class="nav__brand-name">marcus.chen</span>
+                <span class="nav__brand-cursor">_</span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#writing">Writing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="top">
+            <div class="hero__grid-bg" aria-hidden="true"></div>
+            <div class="container hero__inner">
+                <div class="hero__meta">
+                    <span class="status-dot"></span>
+                    <span class="hero__meta-text">Available for new projects · Q3 2026</span>
+                </div>
+                <h1 class="hero__title">
+                    <span class="hero__greeting">// hello, world.</span>
+                    <span class="hero__name">Marcus Chen</span>
+                    <span class="hero__role">Full-Stack Developer<span class="cursor">|</span></span>
+                </h1>
+                <p class="hero__lede">
+                    I build resilient web platforms, distributed services, and developer tooling.
+                    Previously at scale-stage startups, currently maintaining a handful of open-source projects.
+                </p>
+
+                <div class="hero__stack" aria-label="Primary tech stack">
+                    <span class="hero__stack-label">stack:</span>
+                    <ul class="stack-icons">
+                        <li class="stack-icon" data-tooltip="TypeScript">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3V3zm9.5 11.5v6h2v-6h2v-2h-6v2h2zm6 0c0-.8.7-1.5 1.5-1.5h2v-2h-2c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5c.5 0 1 .4 1 1s-.5 1-1 1h-3v2h3c1.7 0 3-1.3 3-3s-1.3-3-3-3c-.5 0-1-.4-1-1z"/></svg>
+                            <span class="stack-icon__label">TypeScript</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="Rust">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L9 5h2v3H7l-2-2-1 2 2 2v2H4v2h2v2l-2 2 1 2 2-2h4v3H9l3 3 3-3h-2v-3h4l2 2 1-2-2-2v-2h2v-2h-2v-2l2-2-1-2-2 2h-4V5h2l-3-3z"/></svg>
+                            <span class="stack-icon__label">Rust</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="Go">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0-1.1.9-2 2-2h2v2H4v2h2v2H4c-1.1 0-2-.9-2-2v-2zm6-2h6c2.2 0 4 1.8 4 4s-1.8 4-4 4H8v-8zm2 2v4h4c1.1 0 2-.9 2-2s-.9-2-2-2h-4zm10-2h2v8h-2v-8z"/></svg>
+                            <span class="stack-icon__label">Go</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="React">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.2"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="1.2" transform="rotate(120 12 12)"/></svg>
+                            <span class="stack-icon__label">React</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="Node.js">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.3L19.5 8 12 11.7 4.5 8 12 4.3zM5 9.3l6 3v8.4l-6-3V9.3zm14 0v8.4l-6 3v-8.4l6-3z"/></svg>
+                            <span class="stack-icon__label">Node.js</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="PostgreSQL">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                            <span class="stack-icon__label">PostgreSQL</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="Docker">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h3v3H3v-3zm4 0h3v3H7v-3zm4 0h3v3h-3v-3zm4 0h3v3h-3v-3zm-8-4h3v3H7V7zm4 0h3v3h-3V7zm0-4h3v3h-3V3zm10 8c0 5-4 9-9 9s-9-2-9-7h17c.7 0 1-.5 1-2z"/></svg>
+                            <span class="stack-icon__label">Docker</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="Kubernetes">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5zm0 2.5L5 8.2v7.6l7 3.7 7-3.7V8.2L12 4.5zm0 3l4 2.5-1.5 4.5h-5L8 9.9 12 7.5z"/></svg>
+                            <span class="stack-icon__label">Kubernetes</span>
+                        </li>
+                        <li class="stack-icon" data-tooltip="GraphQL">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M12 2L3 17h18L12 2z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="2" r="1.5"/><circle cx="3" cy="7" r="1.5"/><circle cx="3" cy="17" r="1.5"/><circle cx="12" cy="22" r="1.5"/><circle cx="21" cy="17" r="1.5"/><circle cx="21" cy="7" r="1.5"/></svg>
+                            <span class="stack-icon__label">GraphQL</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hero__cta">
+                    <a href="https://github.com/marcuschen" class="btn btn--primary" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="btn__icon"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8v2.6c0 .3.2.6.7.5C19.1 20.2 22 16.4 22 12c0-5.5-4.5-10-10-10z"/></svg>
+                        github.com/marcuschen
+                    </a>
+                    <a href="#projects" class="btn btn--ghost">
+                        view projects
+                        <span class="btn__arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="hero__stats">
+                    <div class="stat">
+                        <span class="stat__num">8+</span>
+                        <span class="stat__label">years shipping</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">2.4k</span>
+                        <span class="stat__label">github stars</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat__num">42</span>
+                        <span class="stat__label">OSS PRs merged</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__label">// 01</span>
+                    <h2 class="section__title">Selected Projects</h2>
+                    <p class="section__lede">A sample of recent work — production systems, side projects, and tools I keep coming back to.</p>
+                </header>
+
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section section--alt" id="skills">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__label">// 02</span>
+                    <h2 class="section__title">Skills Matrix</h2>
+                    <p class="section__lede">Years of usage and current proficiency. I rate honestly — "advanced" means I've debugged its internals.</p>
+                </header>
+
+                <div class="skills" id="skills-grid"></div>
+            </div>
+        </section>
+
+        <!-- Writing -->
+        <section class="section" id="writing">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__label">// 03</span>
+                    <h2 class="section__title">Writing</h2>
+                    <p class="section__lede">Notes from the trenches: deep dives, postmortems, and the occasional opinion.</p>
+                </header>
+
+                <ul class="posts" id="posts-list"></ul>
+
+                <div class="section__cta">
+                    <a href="#" class="link link--arrow">all writing<span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section section--alt" id="contact">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__label">// 04</span>
+                    <h2 class="section__title">Get In Touch</h2>
+                    <p class="section__lede">Got an interesting problem? Let's talk. I usually respond within a day.</p>
+                </header>
+
+                <div class="contact">
+                    <form class="contact__form" id="contact-form" novalidate>
+                        <div class="field">
+                            <label for="name">name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Ada Lovelace">
+                            <span class="field__error" data-error-for="name"></span>
+                        </div>
+                        <div class="field">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="ada@analytical.engine">
+                            <span class="field__error" data-error-for="email"></span>
+                        </div>
+                        <div class="field">
+                            <label for="subject">subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="A quick chat about…">
+                        </div>
+                        <div class="field">
+                            <label for="message">message</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about the project…"></textarea>
+                            <span class="field__error" data-error-for="message"></span>
+                        </div>
+                        <button type="submit" class="btn btn--primary contact__submit">
+                            <span class="contact__submit-text">send message</span>
+                            <span class="btn__arrow">→</span>
+                        </button>
+                        <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
+                    </form>
+
+                    <aside class="contact__side">
+                        <div class="contact__card">
+                            <h3 class="contact__card-title">Direct lines</h3>
+                            <ul class="contact__list">
+                                <li>
+                                    <span class="contact__key">email</span>
+                                    <a href="mailto:hello@marcuschen.dev">hello@marcuschen.dev</a>
+                                </li>
+                                <li>
+                                    <span class="contact__key">github</span>
+                                    <a href="https://github.com/marcuschen" target="_blank" rel="noopener">@marcuschen</a>
+                                </li>
+                                <li>
+                                    <span class="contact__key">x</span>
+                                    <a href="https://x.com/marcus_codes" target="_blank" rel="noopener">@marcus_codes</a>
+                                </li>
+                                <li>
+                                    <span class="contact__key">linkedin</span>
+                                    <a href="https://linkedin.com/in/marcuschen" target="_blank" rel="noopener">in/marcuschen</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="assets/marcus-chen-resume.pdf" download class="resume-download">
+                            <div class="resume-download__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+                            </div>
+                            <div class="resume-download__body">
+                                <span class="resume-download__title">Download resume</span>
+                                <span class="resume-download__meta">PDF · 184 KB · updated Apr 2026</span>
+                            </div>
+                            <span class="resume-download__arrow" aria-hidden="true">↓</span>
+                        </a>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <span class="nav__brand-prompt">$</span>
+                <span>marcus.chen</span>
+                <span class="footer__copy">© 2026 — built with care &amp; HTML</span>
+            </div>
+            <ul class="footer__links">
+                <li><a href="https://github.com/marcuschen" target="_blank" rel="noopener">github</a></li>
+                <li><a href="https://x.com/marcus_codes" target="_blank" rel="noopener">x/twitter</a></li>
+                <li><a href="https://linkedin.com/in/marcuschen" target="_blank" rel="noopener">linkedin</a></li>
+                <li><a href="mailto:hello@marcuschen.dev">email</a></li>
+            </ul>
+            <button class="footer__top" aria-label="Back to top" id="back-to-top">↑ top</button>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
