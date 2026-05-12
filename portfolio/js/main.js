@@ -2,6 +2,10 @@
 // Marcus Chen — Portfolio: data + interactions
 // =========================================================
 
+// Contact form backend. Create a form at https://formspree.io and replace
+// YOUR_FORM_ID below (also update the matching `action` attribute in index.html).
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
 const projects = [
     {
         title: "Helix Realtime DB",
@@ -336,7 +340,7 @@ function setupContactForm() {
         return ok;
     };
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const fd = new FormData(form);
         status.dataset.state = '';
@@ -348,6 +352,12 @@ function setupContactForm() {
             return;
         }
 
+        if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+            status.dataset.state = 'error';
+            status.textContent = '✗ form backend not configured — email hello@marcuschen.dev directly.';
+            return;
+        }
+
         const submit = form.querySelector('.contact__submit');
         const submitText = form.querySelector('.contact__submit-text');
         const original = submitText.textContent;
@@ -355,13 +365,23 @@ function setupContactForm() {
         submitText.textContent = 'sending…';
         status.textContent = '> dispatching message…';
 
-        // Simulated send — wire to a real endpoint when deploying
-        setTimeout(() => {
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: fd
+            });
+            if (!response.ok) throw new Error('http ' + response.status);
+            status.dataset.state = '';
+            status.textContent = '✓ message sent. I\'ll get back to you within 24h.';
+            form.reset();
+        } catch (err) {
+            status.dataset.state = 'error';
+            status.textContent = '✗ couldn\'t send — email hello@marcuschen.dev instead.';
+        } finally {
             submit.removeAttribute('disabled');
             submitText.textContent = original;
-            status.textContent = '✓ message queued. I\'ll get back to you within 24h.';
-            form.reset();
-        }, 1100);
+        }
     });
 
     // Clear errors on input
